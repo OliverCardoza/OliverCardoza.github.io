@@ -2,7 +2,6 @@
 layout: post
 title:  "Hello World"
 date:   2014-10-08 22:21:00
-categories: jekyll update
 ---
 <img style="float: right" src="/images/me.jpg">
 
