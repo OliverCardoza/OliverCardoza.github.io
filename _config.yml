@@ -8,4 +8,12 @@ twitter_username: OliverCardoza
 github_username:  OliverCardoza
 
 # Build settings
+exclude: [
+  .gitignore,
+  CNAME,
+  Gemfile,
+  Gemfile.lock,
+  README.md
+]
 markdown: kramdown
+timezone: Canada/Eastern
