@@ -3,7 +3,7 @@ layout: page
 title: Resume
 permalink: /resume/
 ---
-This is a WIP resume which will one day replace my [LinkedIn profile](http://ca.linkedin.com/in/olivercardoza/). I want to a cool resume eventually. Roadmap:
+This is a WIP resume which will one day replace my [LinkedIn profile](http://ca.linkedin.com/in/olivercardoza/). I want to make a cool resume eventually. Roadmap:
 
 1. <strike>Make basic markdown job list</strike>
 2. Improve formatting (stop abusing kramdown definition lists)
