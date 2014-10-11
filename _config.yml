@@ -1,6 +1,6 @@
 # Site settings
 title: Oliver Cardoza
-# email: your-email@domain.com
+email: me@olivercardoza.com
 description: "still in development"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://olivercardoza.com" # the base hostname & protocol for your site
