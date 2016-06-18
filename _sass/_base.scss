@@ -139,7 +139,8 @@ code {
 
 pre {
     padding: 8px 12px;
-    overflow-x: scroll;
+    /** Changed from "scroll" to prevent always having scroll horizontal bar. */
+    overflow-x: auto;
 
     > code {
         border: 0;
