@@ -3,9 +3,9 @@ layout: post
 title:  "The Path to Ledger"
 date:   2016-06-18 14:53:00
 ---
-When I started working full-time my financial life got a lot more complicated. I created a registered retirement savings plan account (RRSP) because my employer matched my contributions. I needed to create a brokerage account because my employer partially paid me in equity (company stock). An additional complication is that the stocks are sold for US dollars and I'm based on Canada. So I opened a USD account to hold the revenue from selling stock. I ended up having 9 financial open accounts.
+When I started working full-time my financial life got a lot more complicated. I created a registered retirement savings plan account (RRSP) because my employer matched my contributions. I needed to create a brokerage account because my employer partially paid me in equity (company stock). An additional complication is that the stocks are sold for US dollars and I'm based on Canada. So I opened a USD account to hold the revenue from selling stock. I ended up having 9 financial accounts.
 
-I started off trying [Mint](https://www.mint.com/) to help make sense of all the data. It's a website which you give all of your financial account passwords and in return it provides a single location to dig into all of your data. Budgets, dashboards, graphs, and more which appealed to my inner spreadsheet fiend. Massive security and privacy concerns aside, it does a decent job for a few accounts (chequing account, credit card). However, it had flaky support for some of my accounts and no support for others. Eventually the lack of support and the sharing passwords got to me and I decided to look into a better alternative.
+I started off trying [Mint](https://www.mint.com/) to help make sense of all the data. It's a website where you give them all of your bank login credentials and in return it provides a single location to dig into all of your data. Budgets, dashboards, graphs, and more which appealed to my inner spreadsheet fiend. Massive security and privacy concerns aside, it does a decent job for a few accounts (chequing account, credit card). However, it had flaky support for some of my accounts and no support for others. Eventually the lack of support and the sharing passwords got to me and I decided to look into a better alternative.
 
 This is how I found [Ledger](http://ledger-cli.org/): a data format and associated command line tool to organize financial data. It is a [double-entry accounting system](https://en.wikipedia.org/wiki/Double-entry_bookkeeping_system) which means that every transaction lists a debtor account (where the money comes from) and a credit account (where the money goes). All transactions are stored in ledger format in text files and the `ledger` command is used to read them. Here's a simplified example transaction from my ledger:
 
@@ -36,9 +36,9 @@ The Ledger format is incredibly flexibile and the reporting tools very powerful.
     Income:Capital Gains            CAD -60.00
 ```
 
-Here 2 stocks of AAPL (Apple Inc.) were sold for 100 USD each with a conversion rate of 1.30 CAD/USD. The stocks were previously purchased at a price of 100 CAD and is now being sold for a value of 130 CAD which incurs a capital gain of 60 CAD. Additionally a trading fee was chared which is deducted from the amount paid to the USD chequing account.
+Here 2 stocks of AAPL (Apple Inc.) were sold for 100 USD each with a conversion rate of 1.30 CAD/USD. The stocks were previously purchased at a price of 100 CAD and is now being sold for a value of 130 CAD which incurs a capital gain of 60 CAD. Additionally a trading fee was charged which is deducted from the amount paid to the USD chequing account.
 
-Another neat reporting feature of Ledger is being able to understand where you are spending your money proportionally. After some iteration I was able to craft the following Ledger report command:
+Another neat reporting feature of Ledger is being able to understand where you are spending your money. After some iteration I was able to craft the following Ledger report command:
 
 ```
 ledger bal Expenses -H -X CAD --flat -S -T
