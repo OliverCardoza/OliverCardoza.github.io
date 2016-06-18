@@ -16,4 +16,5 @@ exclude: [
   README.md
 ]
 markdown: kramdown
+highlighter: rouge
 timezone: Canada/Eastern
