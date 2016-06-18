@@ -2,7 +2,9 @@
  * Syntax highlighting styles
  */
 .highlight {
+    /** Removed to prevent highlight having different background from <pre> both are used for code blocks
     background: #fff;
+    */
     @extend %vertical-rhythm;
 
     .c     { color: #998; font-style: italic } // Comment
