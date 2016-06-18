@@ -73,7 +73,9 @@ If you want to learn more about Ledger check out the following resources:
 
 * [Ledger HTML docs](http://ledger-cli.org/3.0/doc/ledger3.html#Introduction-to-Ledger)
 * [Wiki: double-entry bookkeeping system](https://en.wikipedia.org/wiki/Double-entry_bookkeeping_system)
+* [Github: Ledger repo](https://github.com/ledger/ledger)
+* [Github: icsv2ledger repo](https://github.com/quentinsf/icsv2ledger): converts CSV statements into Ledger format
  
-I generally don't recommend Ledger because normal people don't want to boot up a terminal to do their accounting. Also most people (hopefully) have a simpler financial situation. But if you're weird and complicated like me and you don't mind writing import scripts and using Linux tools then this might be the perfect fit.
+I generally don't recommend Ledger because normal people don't want to boot up a terminal to do their accounting. Also most people (hopefully) have a simpler financial situation. But if you're weird and unnecessarily complicated like me and you don't mind writing import scripts then this might be the perfect fit.
 
 Also if you have feedback or requests about this post email me@olivercardoza.com
