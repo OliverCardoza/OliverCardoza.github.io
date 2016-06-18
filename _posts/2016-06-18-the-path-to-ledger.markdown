@@ -45,22 +45,25 @@ Describing the arguments from left to right:
 * `--flat`: use the full name of accounts rather than indented tree [[docs]](http://ledger-cli.org/3.0/doc/ledger3.html#index-_002d_002dflat)
 * `-S -T`: sort the accounts (-S) in descending order of account total (-T)
 
-I wrote this command for curiousity to see where my top spending categories have been for the last year and a half of Ledger reporting. In case you're curious these are my top ten:
+I wrote this command for curiousity to see where my top spending categories have been for the last year and a half of Ledger reporting. Here's the output with cash totals mocked:
 
-1. Rent
-2. Vacation
-3. Restaurants
-4. Electronics
-5. Groceries
-6. Gas
-7. Sporting Goods
-8. Gym and fitness memberships
-9. Cash
-10. Gifts
+    $ ledger bal Expenses -H -X CAD --flat -S -T 
+        CAD 900  Expenses:Bills and Utilities:Rent
+        CAD 800  Expenses:Vacation
+        CAD 700  Expenses:Food:Restaurants
+        CAD 600  Expenses:Shopping:Electronics
+        CAD 500  Expenses:Food:Groceries
+        CAD 400  Expenses:Car:Gas
+        CAD 300  Expenses:Shopping:Sporting Goods
+        CAD 200  Expenses:Health and Fitness:Gym
+        CAD 100  Expenses:Cash
+        CAD   1  Expenses:Shopping:Gifts
 
 If you want to learn more about Ledger check out the following resources:
 
 * [Ledger HTML docs](http://ledger-cli.org/3.0/doc/ledger3.html#Introduction-to-Ledger)
 * [Wiki: double-entry bookkeeping system](https://en.wikipedia.org/wiki/Double-entry_bookkeeping_system)
+ 
+I generally don't recommend Ledger because normal people don't want to boot up a terminal to do their accounting. Also most people (hopefully) have a simpler financial situation. But if you're weird and complicated like me and you don't mind writing import scripts and using Linux tools then this might be the perfect fit.
 
 Also if you have feedback or requests about this post email me@olivercardoza.com
