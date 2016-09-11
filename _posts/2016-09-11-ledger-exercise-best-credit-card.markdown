@@ -36,6 +36,7 @@ To identify the max rewards returned for this card I'll need to calculate two va
 The preferred merchants which I used are: Esso, No Frills, Real Canadian Superstore, Shoppers Drug Mart, and Zehrs.
 
 With the above information I can perform the following two Ledger reports to calculate rewards:
+
 ```
 // Returns total credit card spending
 ledger bal "Liabilities:Credit Cards:PC" -l "amount < 0"
@@ -61,6 +62,7 @@ effective_cashback = (cashback - fees) / total_spend
 ### Tangerine Money-Back Credit Card
 
 I personally have a Tangerine savings account so this lets me pick three categories. Next is to figure out the best three. Thankfully I already have a head start on the report for this analysis on my [other Ledger post](http://olivercardoza.com/2016/06/18/the-path-to-ledger.html). There is however, one modification I need to make. We want to limit expense transactions to those that occurred from my credit card. Thankfully Ledger has us covered.
+
 ```
 // Returns top expenses from credit card. Remember normalized to $1000 total credit purchases.
 ledger bal --flat -S -T Expenses and expr 'any(account =~ /Liabilities:Credit Cards:PC/)'
