@@ -3,9 +3,9 @@ layout: post
 title:  "Ledger Exercise: Best Credit Card"
 date:   2016-06-18 14:53:00
 ---
-Recently I was talking with some friends about credit cards; specifically which one offers the best rewards. At some point during the conversation I realized that my work with [Ledger](http://ledger-cli.org) had set me up to provide an interesting case study. It could also settle whether we were all being silly and debating over superficial gains. Skip to the end if you just want to see the fancy graph result.
+Recently I was talking with some friends about credit cards; specifically which one offers the best rewards. At some point during the conversation I realized that my work with [Ledger](http://ledger-cli.org) had set me up to provide an interesting case study. It could also settle whether we were all being silly and debating over superficial gains. If math and accounting bores you then you should skip to the end to see the fancy graph result.
 
-So first I decided to pick my candidate cards to compare. I only chose cards which return cash or reward points that are pinned to a dollar value (e.g. 1 point == $0.01). I avoid other cards because without having reward points pinned the reward company can change the value whenever they want. For example if a flight from Toronto to Vancouver was worth 1000 Aeroplan points what's the dollar value per point? Well the answer is that the flight dollar and point value can change daily.
+So first I decided to pick my candidate cards to compare. I only chose cards which return cash or reward points that are pinned to a dollar value (e.g. 1 point == $0.01). I avoid other cards because without having reward points pinned the reward company can change the value whenever they want. For example if a flight from Toronto to Vancouver was worth 1000 Aeroplan points what's the dollar value per point? Well the answer is that the flight dollar and point value can change daily making it hard to evaluate.
 
 Ok back to candidate cards, I selected these three which I'm considering:
 
@@ -14,6 +14,7 @@ Ok back to candidate cards, I selected these three which I'm considering:
     * Effective reward value: 3% cash back at preferred merchants, 1% elsewhere
     * Preferred merchants: PC brand (Zehrs, Shoppers Drug Mart, Loblaws, etc)
     * Rewards redeemable: purchases at PC grocery stores
+    * Has a minimum income requirement
 * [Tangerine Money-Back Credit Card](https://www.tangerine.ca/moneybackcreditcard)
     * Annual Fee: None
     * Effective reward value: 2% cash back in 2 categories, 1% elsewhere (+1 category if you use Tangerine savings account)
@@ -21,8 +22,9 @@ Ok back to candidate cards, I selected these three which I'm considering:
 * [MBNA World Elite MasterCard](https://rewards.mbna.ca/worldelite)
     * Annual Fee: $85
     * Effective reward value: 2% cash back on all purchases
+    * Has a minimum income requirement
 
-For each card I'll calculate the effective cashback percentage using my historical purchases over the last 20 months. This obviously isn't definitive since it uses my purchases but its potentially interesting nonetheless. I will calculate effective cashback percentage as follows:
+For each card I'll calculate the effective cashback percentage using my historical purchases over the last 20 months as recorded in my ledger. This obviously isn't definitive since it uses my purchases but its potentially interesting nonetheless. I will calculate effective cashback percentage as follows:
 
 ```
 effective_cashback = (cashback - fees) / total_spend
@@ -61,7 +63,7 @@ effective_cashback = (cashback - fees) / total_spend
 
 ### Tangerine Money-Back Credit Card
 
-I personally have a Tangerine savings account so this lets me pick three categories. Next is to figure out the best three. Thankfully I already have a head start on the report for this analysis on my [other Ledger post](http://olivercardoza.com/2016/06/18/the-path-to-ledger.html). There is however, one modification I need to make. We want to limit expense transactions to those that occurred from my credit card. Thankfully Ledger has us covered.
+I personally have a Tangerine savings account so this lets me pick three categories with preferred cashback rates. First I have to figure out the categories where I spend the most. Thankfully I already have a head start on the report for this analysis on my [other Ledger post](http://olivercardoza.com/2016/06/18/the-path-to-ledger.html). There is however, one modification I need to make which is limiting expense transactions to only those that occurred from my credit card. Thankfully Ledger has me covered.
 
 ```
 // Returns top expenses from credit card. Remember normalized to $1000 total credit purchases.
@@ -91,7 +93,7 @@ effective_cashback = (cashback - fees) / total_spend
 
 ### MBNA World Elite MasterCard
 
-This card should be the easiest one to calculate the effective cashback rate because it does not disciminate purchases using preferred merchants and categories. However, since we are using a normalized spending of $1000 the $85 annual fee will eat up all the cashback. I'll show two examples to illustrate this point.
+This card should be the easiest one to calculate the effective cashback rate because it does not disciminate purchases using preferred merchants and categories. However, since I am using a normalized spending of $1000 the $85 annual fee will eat up all the cashback. I'll show two examples to illustrate this point.
 ```
 total_spend = $1000
 cashback = total_spend * 0.02
@@ -112,8 +114,10 @@ This means that there is a threshold of spending where if you spend more than th
 
 ## Summary
 
-The Tangerine and the PC credit card provide almost the same return rate for my purchases but the Tangerine card comes out on top. The MBNA card provides the best return after annual credit spending reaches $12000.
+The Tangerine and the PC credit card provide almost the same return rate for my purchases but the Tangerine card comes out on top. This is surprising because the Tangerine card is really easy to get. It comes with no annual fee or minimum annual income requirement like the other two cards. Kudos Tangerine! If you spend more than $12K/year then the MBNA starts to provide the better return.
 
 <iframe width="613" height="379" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1BWTzVrlXIEFNEa-3XXyqXpADdyev8BOcfUSuHkMQkpw/pubchart?oid=789365586&amp;format=interactive"></iframe>
 
-Was this a worthwhile analysis? Well I learned more about using Ledger [value expressions](http://ledger-cli.org/3.0/doc/ledger3.html#Value-Expressions) and limit param. In the big picture my choice of credit card won't have a big impact on my life. But sometimes running through the analysis can be fun :)
+Now that the objective properties are out of the way we can think about the overall impact: was this a worthwhile analysis? Well I learned more about using Ledger [value expressions](http://ledger-cli.org/3.0/doc/ledger3.html#Value-Expressions) and limit param. This will probably come in handy when figuring out TFSA/RRSP contributions as a separate metric from the value in the account. But what about changing my credit card? Will I change? Probably. But in the big picture I know my choice won't have a big impact on my life. Sometimes just running through the analysis can be fun :)
+
+If you have feedback or requests about this post email me@olivercardoza.com
