@@ -10,7 +10,7 @@ I started off trying [Mint](https://www.mint.com/) to help make sense of all the
 This is how I found [Ledger](http://ledger-cli.org/): a data format and associated command line tool to organize financial data. It is a [double-entry accounting system](https://en.wikipedia.org/wiki/Double-entry_bookkeeping_system) which means that every transaction lists a debtor account (where the money comes from) and a credit account (where the money goes). All transactions are stored in ledger format in text files and the `ledger` command is used to read them. Here's a simplified example transaction from my ledger:
 
 ```
-2015/08/30 Starbucks
+2015-08-30 Starbucks
     Expenses:Food                     $3.50
     Liabilities:MasterCard           $-3.50
 ```
@@ -18,7 +18,7 @@ This is how I found [Ledger](http://ledger-cli.org/): a data format and associat
 This transaction shows that I paid $3.50 at Starbucks using my MasterCard. The transaction total balances to 0 which is a principle of double-entry accounting. Money is not created in a vaccuum. It comes from somewhere and goes somewhere else. Unless of course you're a [central bank](https://en.wikipedia.org/wiki/Central_bank) like the Bank of Canada. Then your ledger would look like:
 
 ```
-2016/01/01 Canadian Mint
+2016-01-01 Canadian Mint
     Assets:Coins                     $1,000,000
     Expenses:Materials               $100,000
     ???                              $-900,000
