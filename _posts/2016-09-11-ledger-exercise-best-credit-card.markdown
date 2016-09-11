@@ -3,9 +3,9 @@ layout: post
 title:  "Ledger Exercise: Best Credit Card"
 date:   2016-06-18 14:53:00
 ---
-Recently I was talking with some of my friends about credit cards; specifically which is the best rewards program. At some point during the conversation I realized that my work with [Ledger](http://ledger-cli.org) had set me up to provide an interesting case study. It could also settle whether we were all being silly and debating over superficial gains. Also it would be a good exercise to learn more Ledger commands.
+Recently I was talking with some friends about credit cards; specifically which one offers the best rewards. At some point during the conversation I realized that my work with [Ledger](http://ledger-cli.org) had set me up to provide an interesting case study. It could also settle whether we were all being silly and debating over superficial gains. Skip to the end if you just want to see the fancy graph result.
 
-So first I decided to pick my candidate cards to compare. For my comparison I only chose cards which return cash or reward points that are pinned to a dollar value (e.g. 1 point == $0.01). Cards which don't meet these criteria are typically travel reward cards. I avoid these cards because travel points aren't always pinned to a fixed dollar value. This means that the reward company can change the value whenever they want. You are essentially at the mercy of the reward company and limited to whatever redeemable offers are available. This makes the rewards hard to value. For example if a flight from Toronto to Vancouver was worth 1000 Aeroplan points what's the dollar value per point? Well the answer is that the flight dollar and point value can change daily.</rant>
+So first I decided to pick my candidate cards to compare. I only chose cards which return cash or reward points that are pinned to a dollar value (e.g. 1 point == $0.01). I avoid other cards because without having reward points pinned the reward company can change the value whenever they want. For example if a flight from Toronto to Vancouver was worth 1000 Aeroplan points what's the dollar value per point? Well the answer is that the flight dollar and point value can change daily.
 
 Ok back to candidate cards, I selected these three which I'm considering:
 
@@ -23,12 +23,13 @@ Ok back to candidate cards, I selected these three which I'm considering:
     * Effective reward value: 2% cash back on all purchases
 
 For each card I'll calculate the effective cashback percentage using my historical purchases over the last 20 months. This obviously isn't definitive since it uses my purchases but its potentially interesting nonetheless. I will calculate effective cashback percentage as follows:
+
 ```
 effective_cashback = (cashback - fees) / total_spend
 ```
 I'll present Ledger commands and run them on my transactions but won't post the actual values. Instead I'll present my `total_spend` as $1000 and present all other numbers relative to that.
 
-## PC World Elite MasterCard
+### PC World Elite MasterCard
 
 To identify the max rewards returned for this card I'll need to calculate two variables: `preferred_merchant_spend` and `other_spend`. The first tracks the amount I've spent at PC preferred merchants and the second tracks all other credit card expenses.
 
@@ -42,7 +43,7 @@ ledger bal "Liabilities:Credit Cards:PC" -l "amount < 0"
 
 // Returns credit card spending at preferred merchants
 ledger bal "Liabilities:Credit Cards:PC" -l "amount < 0 and payee =~ /Esso|(No Frills)|(Real Canadian Superstore)|(Shoppers Drug Mart)|Zehrs/"
-     $100
+     $99
 
 // Now to calculate effective_cashback
 total_spend = $1000
@@ -57,7 +58,7 @@ effective_cashback = (cashback - fees) / total_spend
                    = 1.20%
 ```
 
-## Tangerine Money-Back Credit Card
+### Tangerine Money-Back Credit Card
 
 I personally have a Tangerine savings account so this lets me pick three categories. Next is to figure out the best three. Thankfully I already have a head start on the report for this analysis on my [other Ledger post](http://olivercardoza.com/2016/06/18/the-path-to-ledger.html). There is however, one modification I need to make. We want to limit expense transactions to those that occurred from my credit card. Thankfully Ledger has us covered.
 ```
@@ -71,7 +72,7 @@ ledger bal --flat -S -T Expenses and expr 'any(account =~ /Liabilities:Credit Ca
          ...
 ```
 
-Now I can calculate effective cashback using restaurants, groceries, and gas as my preferred categories.
+Now I can calculate effective cashback using my top-spending, supported categories: restaurants, groceries, and gas.
 ```
 total_spend = $1000
 preferred_category_spend = $137 + $87 + $67
@@ -86,7 +87,7 @@ effective_cashback = (cashback - fees) / total_spend
                    = 1.29%
 ```
 
-## MBNA World Elite MasterCard
+### MBNA World Elite MasterCard
 
 This card should be the easiest one to calculate the effective cashback rate because it does not disciminate purchases using preferred merchants and categories. However, since we are using a normalized spending of $1000 the $85 annual fee will eat up all the cashback. I'll show two examples to illustrate this point.
 ```
@@ -105,10 +106,12 @@ effective_cashback = ($400 - $85) / $1000
                    = 1.58%
 ```
 
-This means that there is a threshold in spending where if you spend less than one of the no-annual fee cards will be better and if you spend more than the MBNA card will be better. I'll illustrate this in the summary.
+This means that there is a threshold of spending where if you spend more than the threshold value the MBNA card will have the best cashback return.
 
 ## Summary
 
 The Tangerine and the PC credit card provide almost the same return rate for my purchases but the Tangerine card comes out on top. The MBNA card provides the best return after annual credit spending reaches $12000.
 
 <iframe width="613" height="379" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1BWTzVrlXIEFNEa-3XXyqXpADdyev8BOcfUSuHkMQkpw/pubchart?oid=789365586&amp;format=interactive"></iframe>
+
+Was this a worthwhile analysis? Well I learned more about using Ledger [value expressions](http://ledger-cli.org/3.0/doc/ledger3.html#Value-Expressions) and limit param. In the big picture my choice of credit card won't have a big impact on my life. But sometimes running through the analysis can be fun :)
