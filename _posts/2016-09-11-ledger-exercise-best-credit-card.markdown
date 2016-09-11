@@ -79,6 +79,7 @@ ledger bal --flat -S -T Expenses and expr 'any(account =~ /Liabilities:Credit Ca
 ```
 
 Now I can calculate effective cashback using my top-spending, supported categories: restaurants, groceries, and gas.
+
 ```
 total_spend = $1000
 preferred_category_spend = $137 + $87 + $67
@@ -96,6 +97,7 @@ effective_cashback = (cashback - fees) / total_spend
 ### MBNA World Elite MasterCard
 
 This card should be the easiest one to calculate the effective cashback rate because it does not disciminate purchases using preferred merchants and categories. However, since I am using a normalized spending of $1000 the $85 annual fee will eat up all the cashback. I'll show two examples to illustrate this point.
+
 ```
 total_spend = $1000
 cashback = total_spend * 0.02
