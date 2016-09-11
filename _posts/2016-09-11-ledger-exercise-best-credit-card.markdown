@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ledger Exercise: Best Credit Card"
-date:   2016-06-18 14:53:00
+date:   2016-09-11 15:47:00
 ---
 Recently I was talking with some friends about credit cards; specifically which one offers the best rewards. At some point during the conversation I realized that my work with [Ledger](http://ledger-cli.org) had set me up to provide an interesting case study. It could also settle whether we were all being silly and debating over superficial gains. If math and accounting bores you then you should skip to the end to see the fancy graph result.
 
