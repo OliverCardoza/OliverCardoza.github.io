@@ -56,7 +56,7 @@ Describing the arguments from left to right:
 I wrote this command for curiousity to see where my top spending categories have been for the last year and a half of Ledger reporting. Here's the output with cash totals mocked:
 
 ```
-$ ledger bal Expenses -H -X CAD --flat -S -T 
+ledger bal Expenses -H -X CAD --flat -S -T 
     CAD 900  Expenses:Bills and Utilities:Rent
     CAD 800  Expenses:Vacation
     CAD 700  Expenses:Food:Restaurants
