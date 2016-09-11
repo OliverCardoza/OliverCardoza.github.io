@@ -5,26 +5,28 @@ date:   2016-09-11 15:47:00
 ---
 Recently I was talking with some friends about credit cards; specifically which one offers the best rewards. At some point during the conversation I realized that my work with [Ledger](http://ledger-cli.org) had set me up to provide an interesting case study. It could also settle whether we were all being silly and debating over superficial gains. If math and accounting bores you then you should skip to the end to see the fancy graph result.
 
-So first I decided to pick my candidate cards to compare. I only chose cards which return cash or reward points that are pinned to a dollar value (e.g. 1 point == $0.01). I avoid other cards because without having reward points pinned the reward company can change the value whenever they want. For example if a flight from Toronto to Vancouver was worth 1000 Aeroplan points what's the dollar value per point? Well the answer is that the flight dollar and point value can change daily making it hard to evaluate.
+So first I decided to pick my candidate cards to compare. I only chose cards which return cash or reward points that are pinned to a dollar value (e.g. 1 point == $0.01). I avoid other cards because without pinning the value the reward company can change the value whenever they want. For example if a flight from Toronto to Vancouver was worth 1000 Aeroplan points what's the dollar value per point? Well the answer is that the flight dollar value and point cost can change daily making it hard to evaluate.
 
 Ok back to candidate cards, I selected these three which I'm considering:
 
 * [PC World Elite MasterCard](http://www.pcfinancial.ca/WorldElite) (current card)
-    * Annual Fee: None
-    * Effective reward value: 3% cash back at preferred merchants, 1% elsewhere
-    * Preferred merchants: PC brand (Zehrs, Shoppers Drug Mart, Loblaws, etc)
-    * Rewards redeemable: purchases at PC grocery stores
+    * **Annual Fee**: None
+    * **Effective reward value**: 3% cash back at preferred merchants, 1% elsewhere
+    * **Preferred merchants**: PC brand (Zehrs, Shoppers Drug Mart, Loblaws, etc)
+    * **Rewards redeemable**: purchases at PC grocery stores
     * Has a minimum income requirement
 * [Tangerine Money-Back Credit Card](https://www.tangerine.ca/moneybackcreditcard)
-    * Annual Fee: None
-    * Effective reward value: 2% cash back in 2 categories, 1% elsewhere (+1 category if you use Tangerine savings account)
-    * Potential Categories: groceries, furniture, restaurants, hotels, gas, recurring bills, drug store, home improvement, entertainment, public transpot and parking 
+    * **Annual Fee**: None
+    * **Effective reward value**: 2% cash back in 2 categories, 1% elsewhere (+1 category if you use Tangerine savings account)
+    * **Potential Categories**: groceries, furniture, restaurants, hotels, gas, recurring bills, drug store, home improvement, entertainment, public transpot and parking 
+    * **Rewards redeemable**: cash
 * [MBNA World Elite MasterCard](https://rewards.mbna.ca/worldelite)
-    * Annual Fee: $85
-    * Effective reward value: 2% cash back on all purchases
+    * **Annual Fee**: $85
+    * **Effective reward value**: 2% cash back on all purchases
+    * **Rewards redeemable**: cash
     * Has a minimum income requirement
 
-For each card I'll calculate the effective cashback percentage using my historical purchases over the last 20 months as recorded in my ledger. This obviously isn't definitive since it uses my purchases but its potentially interesting nonetheless. I will calculate effective cashback percentage as follows:
+For each card I'll calculate the effective cashback percentage using my historical purchases over the last 20 months as recorded in my ledger. This means my cashback rates aren't definitive. They are specific to myself but its potentially interesting nonetheless. I will calculate effective cashback percentage as follows:
 
 ```
 effective_cashback = (cashback - fees) / total_spend
@@ -118,6 +120,6 @@ The Tangerine and the PC credit card provide almost the same return rate for my 
 
 <iframe width="613" height="379" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1BWTzVrlXIEFNEa-3XXyqXpADdyev8BOcfUSuHkMQkpw/pubchart?oid=789365586&amp;format=interactive"></iframe>
 
-Now that the objective properties are out of the way we can think about the overall impact: was this a worthwhile analysis? Well I learned more about using Ledger [value expressions](http://ledger-cli.org/3.0/doc/ledger3.html#Value-Expressions) and limit param. This will probably come in handy when figuring out TFSA/RRSP contributions as a separate metric from the value in the account. But what about changing my credit card? Will I change? Probably. But in the big picture I know my choice won't have a big impact on my life. Sometimes just running through the analysis can be fun :)
+Now that the objective properties are out of the way we can think about the overall impact: was this a worthwhile analysis? Well I learned more about using Ledger [value expressions](http://ledger-cli.org/3.0/doc/ledger3.html#Value-Expressions) and limit param. This will probably come in handy when figuring out TFSA/RRSP contributions. But what about changing my credit card? Will I change? Probably. But in the big picture I know my choice won't have a big impact on my life. Sometimes just running through the analysis can be fun :)
 
 If you have feedback or requests about this post email me@olivercardoza.com
