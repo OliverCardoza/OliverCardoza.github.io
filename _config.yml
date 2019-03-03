@@ -21,3 +21,5 @@ timezone: Canada/Eastern
 
 # Google services
 google_analytics: UA-79649328-1
+
+theme: jekyll-theme-minimal
