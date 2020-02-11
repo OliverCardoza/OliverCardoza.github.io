@@ -13,7 +13,9 @@ exclude: [
   CNAME,
   Gemfile,
   Gemfile.lock,
-  README.md
+  README.md,
+  # Required see: https://github.com/jekyll/jekyll/issues/5267
+  vendor
 ]
 markdown: kramdown
 highlighter: rouge
