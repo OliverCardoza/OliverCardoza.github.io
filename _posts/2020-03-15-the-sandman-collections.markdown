@@ -4,7 +4,7 @@ title: "The Sandman Collections"
 date: 2020-03-15 13:34:00
 ---
 
-**tl;dr - I created a spreadsheet to figure out what Sandman comic issues are contained in which collections: [spreadsheet](https://docs.google.com/spreadsheets/d/1jQsMPcsaZpUMGlgUNVmkdZO-Bvc5IY9csFjmuX0-Ogc/view#gid=0).**
+tl;dr - I created a spreadsheet to figure out what Sandman comic issues are contained in which collections: [spreadsheet](https://docs.google.com/spreadsheets/d/1jQsMPcsaZpUMGlgUNVmkdZO-Bvc5IY9csFjmuX0-Ogc/view#gid=0).
 
 Those that know me know that I will consume anything created by Neil Gaiman. Books, comics, movies, tv shows, podcasts, [BBC Symphony Orchestra performances](https://www.bbc.co.uk/programmes/m000ck1c)... anything. Look at this guy's bibliography on Wikipedia: [Neil Gaiman bibliography](https://en.wikipedia.org/wiki/Neil_Gaiman_bibliography).
 

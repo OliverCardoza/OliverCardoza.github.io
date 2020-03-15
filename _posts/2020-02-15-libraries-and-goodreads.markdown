@@ -4,7 +4,7 @@ title: "Libraries and Goodreads"
 date: 2020-02-15 18:20:00
 ---
 
-**tl;dr - I made a site to find books at the [Waterloo Public Library](https://wpl.ca) that are on my [Goodreads](https://goodreads.com) reading list: [Goodreads WPL](https://olivercardoza.com/goodreads-wpl/).**
+tl;dr - I made a site to find books at the [Waterloo Public Library](https://wpl.ca) that are on my [Goodreads](https://goodreads.com) reading list: [Goodreads WPL](https://olivercardoza.com/goodreads-wpl/).
 
 Over the last few years I've gotten into the habit of visiting my local library. I've also collected a long list of books to read which I track on [Goodreads](https://www.goodreads.com/). One problem that started to bug me was finding books from my list that are available at the library. In this post I'll introduce a small project I built to connect my library with Goodreads.
 
