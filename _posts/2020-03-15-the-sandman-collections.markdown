@@ -12,6 +12,7 @@ My latest consumption is his comic book series: [The Sandman](https://en.wikiped
 
 **The Sandman Collections spreadsheet:**
 
-*   [**Open in Google Sheets**](https://docs.google.com/spreadsheets/d/1jQsMPcsaZpUMGlgUNVmkdZO-Bvc5IY9csFjmuX0-Ogc/view#gid=0): recommended way to view because headers are locked in view
-*   Alternative: embedded PDF viewer ([raw](https://olivercardoza.com/assets/the_sandman_collections.pdf))
-    <iframe src="https://docs.google.com/gview?url=https://olivercardoza.com/assets/the_sandman_collections.pdf&embedded=true" style="width:100%; height:240px;" frameborder="0"></iframe>
+*   [**Open in Google Sheets**](https://docs.google.com/spreadsheets/d/1jQsMPcsaZpUMGlgUNVmkdZO-Bvc5IY9csFjmuX0-Ogc/view#gid=0)
+*   [**Download Raw PDF**](https://olivercardoza.com/assets/files/the_sandman_collections.pdf)
+*   **Embedded PDF viewer**: see below
+    <iframe src="https://docs.google.com/gview?url=https://olivercardoza.com/assets/files/the_sandman_collections.pdf&embedded=true" style="width:100%; height:240px;" frameborder="0"></iframe>
