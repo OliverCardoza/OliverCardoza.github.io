@@ -69,28 +69,27 @@ I’m going to jump to the solution here and then outline how I arrived at it in
     Assets:Brokerage             $-1100
     Expenses:Trading Fees        $100
     Assets:Brokerage             VAB 10 @ $100
-    (Virtual:ACB:VAB)            VAB_ACB 10 @@ $1100
+    (Virtual:ACB:VAB)            $1100
  
 2020-01-03 * Trade - BUY
     Assets:Brokerage             $-1600
     Expenses:Trading Fees        $100
     Assets:Brokerage             VAB 10 @ $150
-    (Virtual:ACB:VAB)            VAB_ACB 10 @@ $1600
+    (Virtual:ACB:VAB)            $1600
  
 2020-01-04 * Trade - SELL
     Assets:Brokerage             $1900
     Expenses:Trading Fees        $100
     Assets:Brokerage             VAB -10 @ $200
-    (Virtual:ACB:VAB)            VAB_ACB -10 @ $135
+    (Virtual:ACB:VAB)            $-1350
     (Virtual:Capital Gains)      $550
 ```
  
 Ok, so what’s happening here? I’ll explain it in four parts:
 
 1. Virtual account name: `(Virtual:ACB:VAB)`
-2. Commodity code: `VAB_ACB`
-3. ACB amounts: `VAB_ACB 10 @@ $1100`
-4. Capital gain: `$550`
+2. ACB amounts: `VAB_ACB 10 @@ $1100`
+3. Capital gain: `$550`
 
 ### 1. Virtual Account Name
 
@@ -98,34 +97,9 @@ Ok, so what’s happening here? I’ll explain it in four parts:
 
 The most basic property is the parenthesis `()` which mark this as a virtual posting. Virtual postings are ignored when validating the transaction balancing to zero. Then the actual name is somewhat a matter of preference. I like to prefix my virtual account names with `Virtual` to organize all virtual accounts in the same root. I then include `ACB` to denote that all postings/accounts within it are related to ACB calculations. Finally `VAB` is included as the commodity in question because capital gains and ACB are commodity dependent. This means that your capital gains/losses for VAB won’t impact your other funds. The explicit inclusion of `VAB` as the account suffix helps keep the isolation between funds.
 
-### 2. Commodity code
+### 2. Actual Amounts
 
-`VAB_ACB`
-
-This decision is more of a quirk related to how ledger reports historical commodity prices. Given the following transaction:
-
-```
-; acb.ledger
-2020-01-02 * Trade - BUY
-    Assets:Brokerage             $-1100
-    Expenses:Trading Fees        $100
-    Assets:Brokerage             VAB 10 @ $100
-    (Virtual:ACB:VAB)            VAB 10 @ $110
-```
- 
-There are 2 distinct prices for VAB, the first is $100/share and the second is $110/share. If you were to query ledger for the market value of the VAB in your `Assets:Brokerage` account you may expect it to say $1000, given that the posting in `Assets:Brokerage` is quoted at 10 VAB @ $100 each. However Ledger seems to only track the most recent price so your book value in your `Assets:Brokerage` account is actually calculated to be $1100 (based on the later virtual posting). You can test this yourself by saving the above transaction as a file say `acb.ledger` and then running the following command:
-
-```
-ledger bal Assets:Brokerage -H -X CAD -f acb.ledger
-```
-
-It returns $0 or empty because the $-1100 cost is being perfectly balanced by the 10 VAB calculated at $110 each.
-
-We actually want to track distinct prices for the asset book value (price/share) and the ACB value ((price+fee)/share). To get around this limitation I add the `_ACB` suffix to commodities in these virtual postings so Ledger keeps the prices distinct.
-
-### 3. Actual Amounts
-
-Now that the account name and commodity code are less puzzling we can focus on the amounts. In the case of commodity purchases, we record the total cost of the transaction including fees as the ACB using the `@@` operator. So the first transaction which costs $1100 ($100 fee + 10 VAB shares * $100 each) looks like this:
+Now that the account name and commodity code are less puzzling we can focus on the amounts. In the case of commodity purchases, we record the total cost of the transaction including fees as the ACB. So the first transaction which costs $1100 ($100 fee + 10 VAB shares * $100 each) looks like this:
 
 
 ```
@@ -133,7 +107,7 @@ Now that the account name and commodity code are less puzzling we can focus on t
     Assets:Brokerage             $-1100
     Expenses:Trading Fees        $100
     Assets:Brokerage             VAB 10 @ $100
-    (Virtual:ACB:VAB)            VAB_ACB 10 @@ $1100
+    (Virtual:ACB:VAB)            $1100
 ```
  
 This is fairly simple because the total cost of the transaction is already clearly defined as the cash value leaving your brokerage account so $1100 appears twice. Things get a little more tricky for sales so let’s focus on the last transaction in the example:
@@ -143,7 +117,7 @@ This is fairly simple because the total cost of the transaction is already clear
     Assets:Brokerage             $1900
     Expenses:Trading Fees        $100
     Assets:Brokerage             VAB -10 @ $200
-    (Virtual:ACB:VAB)            VAB_ACB -10 @ $135
+    (Virtual:ACB:VAB)            $-1350
     (Virtual:Capital Gains)      $550
 ```
  
@@ -152,19 +126,20 @@ Since capital gains is discussed in the next section we’ll focus on the `(Virt
 1. First it helps us calculate capital gains for this sale.
 1. Second it is necessary to deduct ACB being used in capital gains for this sale so it does not interfere with future sales.
  
-We want to deduct the ACB of the units being sold. To do this we must first know the total number of units held and the total ACB of these units. This can be accomplished with a few ledger queries:
+We want to deduct the ACB of the 10 units being sold. To do this we must first know the total number of units held and the total ACB of these units. This can be accomplished with a few ledger queries:
  
 ```
 # Total units held up to trade:
-ledger bal Virtual:ACB:VAB --end 2020-01-04 -f example_acb.ledger
-    VAB_ACB 20 Virtual:ACB:VAB
+ledger bal Assets:Brokerage --end 2020-01-04 -f example_acb.ledger
+    $-2700
+    VAB 20 Assets:Brokerage
  
 # Total ACB value of units held up to trade:
-ledger bal Virtual:ACB:VAB --end 2020-01-04 -H -X $ -f example_acb.ledger
+ledger bal Virtual:ACB:VAB --end 2020-01-04 -f example_acb.ledger
     $2700 Virtual:ACB:VAB
 ```
  
-We can get the per-unit ACB by dividing the two values: `$2700 / 20 = $135`. This is the average cost to acquire the 20 VAB units from the first two trades. So in conclusion the line item is calculated to be the same number of units being sold with the unit price set to average ACB with calculation explained above.
+We can get the per-unit ACB by dividing the total ACB value by the number of units held: `$2700 / 20 = $135`. This is the average cost to acquire the 20 VAB units from the first two trades. Now that we know the per-unit ACB is $135 we can define the ACB deducted for this transaction to be `10 units sold * $135 per-unit ACB = $1350 transaction ACB deducted.`
  
 ### 4. Capital Gains
  
@@ -187,9 +162,15 @@ capital_gains = fmv - acb - sale_fees
  
 And there you have it. Capital gains now being managed nicely in your ledger.
  
+## Caveats
+ 
+I’ve rewritten this post at least once, see the edit history: [Github](https://github.com/OliverCardoza/OliverCardoza.github.io/commits/master/_posts/2020-12-04-ledger-and-capital-gains.markdown).
+ 
+Originally I proposed to track the stock units and historical prices in the `Virtual:ACB:VAB` account. However, this doesn’t work very well when multiple trades are performed on the same day with different prices. Ledger doesn’t have a strong grasp of time as it deals mostly with dates. This is also a problem when calculating the ACB of a sale on a day with multiple trades. Using `ledger bal` queries will not show the total units held properly if you have purchased some units that day. The workaround here is to use `ledger reg` queries and carefully note the units held immediately before the sale.
+ 
 ## Conclusion
  
-While this method works I do still find it a little hacky. I wish the commodity naming `VAB_ACB` was unnecessary and that I could somehow leverage ledger’s double-entry validation to check my work. The latter is disabled by using virtual accounts.
+While this method works I do still find it quite hacky. Use of virtual accounts removes some of the nice error protection double-entry account validation offers. Time will tell how well this holds up as I maintain my ledger by these new rules.
  
 My real judgement on this method is how it compares with how I was doing it before. Even though I started using ledger-cli in ~2015, I have been calculating capital gains separately using a spreadsheet when I’ve filed my taxes. I didn’t really like exporting my ledger data just to run a few calculations but it did the trick. Since I’m mostly purchasing stocks and not selling too often this hasn’t been too much work.
  
