@@ -14,6 +14,8 @@ As soon as you start investing you need to worry about calculating capital gains
 
 In Canada we are required to report the capital gains and losses of investments at tax time. A capital gain occurs when you sell an investment at a higher value than it was acquired at. A capital loss is what happens when you sell at a lower price. Capital gains and losses don’t really exist from a tax perspective until you have sold an investment. So if you don’t sell anything then you won’t have to worry about this.
 
+Another notable caveat is that capital gains are exempt from registered accounts like TFSAs and RRSPs. So these rules only apply to assets held outside of registered accounts.
+
 The government taxes capital gains similar to income. The flipside is also true where a capital loss can be claimed for a tax deduction. One interesting difference between earning $100 in income vs a $100 capital gain is that only a percentage of the gain is taxed. At the time of this writing (2020) 50% of capital gains are added as taxable income. So if your marginal tax rate is 25% then for $100 income you’d be taxed $25. However, for $100 of capital gain only $50 is taxable so you’d only be taxed $12.50 (one quarter of $50).
 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTckmAOCQCclionBZDtKcnuj8NPHW7k69A8kSKRHHRQpCCjKnQWMkSnOuGq-O2u2jr33zWMXDw6tCAg/pub?w=518&amp;h=432" style="display: block; margin: auto;">
