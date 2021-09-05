@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GTD in Practice"
+title: "Getting Things Done"
 date: 2021-09-05 13:03:00
 ---
 
