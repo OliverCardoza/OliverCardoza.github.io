@@ -37,7 +37,7 @@ And just like that I cracked open the book wearing my [jade-colored glasses](htt
 
 > In truth, this book is not so much concerned with getting things done as it is championing appropriate engagement with your world–guiding you to make the best choice of what to do in each moment, and **eliminating distraction and stress about what you’re not doing.**
 
-I think the last statement is especially important. I find many self-help and productivity practices to be overly prescriptive on The Right Way™ to do things. However, a tip from Nassim Nicholas Taleb’s [Antifragile](https://en.wikipedia.org/wiki/Antifragile_(book)) is that negative information (aka. The Wrong Way™ or "what not to do") is often more robust and stands the test of time longer.
+It's a bit preachy, but I think the last statement is especially important. I find many self-help and productivity practices to be overly prescriptive on The Right Way™ to do things. However, a tip from Nassim Nicholas Taleb’s [Antifragile](https://en.wikipedia.org/wiki/Antifragile_(book)) is that negative information (aka. The Wrong Way™ or "what not to do") is often more robust and stands the test of time longer.
 
 So what are the via negativa principles presented in GTD? Here’s are the key principles I found:
 
@@ -45,7 +45,7 @@ So what are the via negativa principles presented in GTD? Here’s are the key p
 * Don’t unload your mental baggage into a list or note without periodic review
 * Don’t write out, defer, or plan any task which would take < 2 mins to complete (just do it!)
 * Don’t make yourself promises you can’t keep (commit to less, or renegotiate deals)
-* Don’t desecrate your calendar with optional tasks or aspirational habits you won’t keep (e.g. “Go to Gym?”, "Learn Mandarin?")
+* Don’t put optional tasks or aspirational habits on your calendar (e.g. “Go to Gym?”, "Learn Mandarin?")
 * Don’t implement an organization process that costs more time to maintain than it saves
 * Don’t keep “maybe” / “someday” tasks in the same space as your mandatory tasks
 
@@ -83,9 +83,9 @@ Yes, lists by themselves without action or review can provide a false sense of s
 
 Then coming back to #3-5:
 
-> 3. Lists make you feel guilty for not achieving these things.
-> 4. Lists make you feel guilty for continually delaying certain items.
-> 5. Lists make you feel guilty for not doing things you don't want to be doing anyway.
+> 3\. Lists make you feel guilty for not achieving these things. \
+> 4\. Lists make you feel guilty for continually delaying certain items. \
+> 5\. Lists make you feel guilty for not doing things you don't want to be doing anyway.
 
 I've definitely punted the same item week after week feeling guilty about it. I feel like there are two types of guilt. One is looking at a big list of important items and knowing there isn't enough time to do it all. I've normally found this kind of thing to happen in the workplace. The other type of guilt is caused when some aspirational tasks have been added to a list in the hopes that that will force you to make it happen. Each of these types needs to be addressed slightly differently.
 
