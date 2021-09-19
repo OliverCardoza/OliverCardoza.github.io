@@ -1,0 +1,77 @@
+# recruiters.txt - A simple text file to improve recruitment conversations.
+#
+# This file is a bit of a response to an increased volume of cold recruitement
+# emails. It's laughable to call this a problem but people have built solutions
+# for much sillier things. The format is based on robots.txt which is used to
+# request how automated programs should interact with a website. While
+# recruiters are not robots they sure seem to send a lot of email ;)
+#
+# Below I'll share my preferences when working with recruiters. You don't have
+# to follow it. It's a text file not a cop. But it may save you and me some
+# time :)
+#
+# NOTE: Lines beginning with a '#' are comments and are included with the
+# misguided belief that someone wants to write a script to parse this
+# bologna (Salesforce Apex connector anyone?).
+
+# The last day I updated this file.
+Last updated: 2021-09-19
+
+# Am I interested in new opportunity communications?
+# Some options:
+# - Open for a chat
+# - Do not contact
+# - Do not contact until after YYYY-MM-DD
+Contact status: Do not contact until after 2022-01-01
+
+# What's the best way to contact me?
+# Some options:
+# - user@example.com
+# - linkedin.com/in/userid
+Contact: me@olivercardoza.com
+
+# Please do not contact me if you are on this list.
+# Some options:
+# - spammer@example.com: for a specific block
+# - *@example.com: for a block against a company
+Blocklist:
+- *@amazon.com
+- *@apple.com
+- *@facebook.com
+- *@google.com
+- *@oracle.com
+- *@palantir.com
+- *@uber.com
+
+# If you'd like to reconnect later to check in please wait at least this long.
+# Hopefully most recruiting drip campaign software allows you to configure
+# this. This field functions very similarly to `crawl-delay` or `Crawl rate` in
+# robots.txt.
+Back off period: 1 year
+
+# Where can you find my resume?
+Resume link: linkedin.com/in/olivercardoza
+
+# This section lists some hard requirements I have for any job.
+# I am not willing to negotiate on any of them. If this is a deal breaker then
+# please do not contact.
+Requirements:
+- Location: Remote work or in Canada
+- 25 vacation days per year
+
+# This section lists some basic info I will request about any job.
+# It would be amazing if you could please include as much as possible in your
+# message.
+Info Requests:
+- company name
+- company mission statement
+- job title
+- job responsibilities
+- compensation range and breakdown (salary/bonus/equity)
+- corporate diversity committments (e.g. shopify.com/about/social-impact/people)
+- corporate sustainability commitments (e.g. shopify.ca/about/environment)
+- technology information (e.g. nodejs, k8s, AWS)
+
+# Also if your company only hires "rock stars" then I must insist you mention
+# "brown m&ms" in your email 😎.
+# https://www.snopes.com/fact-check/brown-out/

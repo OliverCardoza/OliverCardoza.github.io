@@ -3,7 +3,7 @@ title: Oliver Cardoza
 email: me@olivercardoza.com
 description: "still in development"
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://olivercardoza.com" # the base hostname & protocol for your site
+url: "https://olivercardoza.com" # the base hostname & protocol for your site
 twitter_username: OliverCardoza
 github_username:  OliverCardoza
 
