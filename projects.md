@@ -5,6 +5,11 @@ permalink: /projects
 ---
 This is a list of some of my personal projects.
 
+## domo
+* **Source**: <https://github.com/OliverCardoza/domo>
+* **Status**: Active
+* **Description**: domo is a Discord bot to help you manage your FOMO.
+
 ## shc-decode
 * **Source**: <https://github.com/OliverCardoza/shc-decode>
 * **Status**: Done
