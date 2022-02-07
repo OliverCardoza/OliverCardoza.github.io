@@ -5,6 +5,11 @@ permalink: /projects
 ---
 This is a list of some of my personal projects.
 
+## dyson-sphere-graphviz
+* **Source**: <https://github.com/OliverCardoza/dyson-sphere-graphviz>
+* **Status**: Active
+* **Description**: Website to view the dependency graph for all items in Dyson Sphere Program.
+
 ## domo
 * **Source**: <https://github.com/OliverCardoza/domo>
 * **Status**: Active
